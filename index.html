@@ -3,168 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senior China-Canada Sourcing & Supply Chain Expert</title>
+    <title>Regain Control Over Fit | Supply Chain Operator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
     <style>
-        /* 全局样式 */
+        :root {
+            --bg-color: #0B0B0B;
+            --grid-color: #1A1A1A;
+            --text-main: #E5E5E5;
+            --text-dim: #999999;
+            --accent: #444444;
+            --border: #2D2D2D;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7f6;
+            overflow-x: hidden;
         }
 
-        /* 容器 */
-        .container {
-            width: 80%;
-            max-width: 1000px;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-        }
+        .mono { font-family: 'IBM Plex Mono', monospace; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1rem; }
 
-        /* 导航栏/页眉 */
-        header {
-            background: #2c3e50;
-            color: #ffffff;
-            padding-top: 60px;
-            min-height: 250px;
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Utility: Lines */
+        .divider { border-top: 1px solid var(--border); margin: 4rem 0; position: relative; }
+        .divider::before { content: '+'; position: absolute; left: 0; top: -10px; color: var(--accent); }
+        .divider::after { content: '+'; position: absolute; right: 0; top: -10px; color: var(--accent); }
+
+        /* Header */
+        header { padding: 4rem 0 2rem 0; }
+        .status-tag { color: #666; margin-bottom: 1rem; display: block; }
+
+        /* Hero */
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 2rem; max-width: 900px; }
+        .hero-sub { font-size: clamp(1.1rem, 3vw, 1.4rem); color: var(--text-dim); max-width: 700px; font-weight: 300; }
+
+        /* About Section */
+        .about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; margin-top: 2rem; }
+        .chinese-endorsement { 
+            border: 1px solid var(--border); 
+            padding: 2rem; 
+            background: rgba(255,255,255,0.02); 
+            font-style: italic;
+            color: var(--text-dim);
+            position: relative;
+        }
+        .chinese-endorsement::before { content: "NOTE_A"; font-family: 'IBM Plex Mono'; font-size: 0.6rem; position: absolute; top: 10px; right: 10px; }
+
+        /* Services */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2px; background: var(--border); border: 1px solid var(--border); }
+        .service-card { background: var(--bg-color); padding: 3rem 2rem; display: flex; flex-direction: column; transition: 0.3s; }
+        .service-card:hover { background: #0f0f0f; }
+        .service-id { color: var(--accent); margin-bottom: 1.5rem; }
+        .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem; }
+        .service-card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1; }
+
+        /* Button */
+        .btn { 
+            display: inline-block; 
+            padding: 1rem 1.5rem; 
+            border: 1px solid var(--text-main); 
+            color: var(--text-main); 
+            text-decoration: none; 
+            font-family: 'IBM Plex Mono', monospace; 
+            font-size: 0.8rem;
+            transition: all 0.3s;
             text-align: center;
         }
+        .btn:hover { background: var(--text-main); color: var(--bg-color); }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            letter-spacing: 1px;
-        }
+        /* Contact */
+        .contact-section { text-align: center; padding: 6rem 0; }
+        .contact-section h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 2rem; }
 
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
+        /* Footer */
+        footer { padding: 4rem 0; border-top: 1px solid var(--border); color: #444; }
 
-        /* 简介部分 */
-        .intro {
-            background: #fff;
-            padding: 40px;
-            margin-top: -50px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        /* 服务卡片 */
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }
-
-        .card {
-            background: #fff;
-            padding: 25px;
-            border-left: 5px solid #2980b9;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            color: #2980b9;
-            margin-top: 0;
-        }
-
-        /* 强调色 */
-        .highlight {
-            color: #e67e22;
-            font-weight: bold;
-        }
-
-        /* 按钮 */
-        .btn {
-            display: inline-block;
-            background: #2980b9;
-            color: #fff;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background 0.3s ease;
-        }
-
-        .btn:hover {
-            background: #34495e;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.9em;
-            color: #7f8c8d;
-        }
-
-        /* 移动端适配 */
-        @media(max-width: 768px) {
-            .container { width: 95%; }
-            header h1 { font-size: 1.8em; }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            h1 { font-size: 2.8rem; }
+            .service-card { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1>Sourcing & Supply Chain Expert</h1>
-            <p>Bridging China Manufacturing with North American Business Excellence</p>
-        </div>
-    </header>
-
     <div class="container">
-        <section class="intro">
-            <h2>About Me</h2>
-            <p>Based in <strong>Canada</strong> since 2003, I am a seasoned trade professional with <strong>14 years (2005-2019)</strong> of hands-on experience running a successful international trading firm. I specialize in navigating the complexities of the China-to-Canada supply chain.</p>
-            <p>Fluent in Mandarin and English, I eliminate cultural and language barriers, ensuring your business gets exactly what it needs, on time and on budget.</p>
-            <a href="https://www.upwork.com/freelancers/~0181fc0a871af07763?viewMode=1" class="btn">View My Upwork Profile</a>
-        </section>
+        <header>
+            <span class="mono status-tag">// STATUS: OPERATIONAL_READY</span>
+            <h1>I Help Brands Regain Control Over Fit.</h1>
+            <p class="hero-sub">Most brands don’t lose money because factories are bad. They lose money because no one truly owns fit once the system scales.</p>
+        </header>
 
-        <h2 style="text-align: center; margin-top: 50px;">Expertise & Services</h2>
-        
-        <section class="services">
-            <div class="card">
-                <h3>🔍 Strategic Sourcing</h3>
-                <p>Finding vetted, high-quality manufacturers in China and performing due diligence to protect your investment.</p>
+        <div class="divider"></div>
+
+        <section class="about-grid">
+            <div>
+                <span class="mono" style="color:var(--accent)">[ SUBJECT_PROFILE ]</span>
+                <p style="margin-top: 1.5rem; font-size: 1.1rem;">
+                    I’m a Product & Supply Chain Operator with 15+ years of hands-on experience in apparel manufacturing and international trade. 
+                    Based in <strong>Canada</strong> since 2003, I provide brands with something rare: factory-level truth.
+                </p>
             </div>
-            <div class="card">
-                <h3>🤝 Negotiation</h3>
-                <p>15 years of experience in price negotiation and contract terms, ensuring maximum ROI for Canadian businesses.</p>
-            </div>
-            <div class="card">
-                <h3>🚢 Logistics & Warehouse</h3>
-                <p>Expert management of international freight, storage solutions, and inventory control.</p>
-            </div>
-            <div class="card">
-                <h3>📋 Customs Clearance</h3>
-                <p>Deep knowledge of Canadian import regulations and customs procedures to ensure smooth cargo delivery.</p>
+            <div class="chinese-endorsement">
+                “深耕供应链一线，跨越文化与语言的壁垒，让工厂不再是黑盒。”
+                <br><br>
+                <span class="mono" style="font-size: 0.7rem;">Native Chinese. Factory Ground Access.</span>
             </div>
         </section>
 
-        <section style="background: #2c3e50; color: white; padding: 40px; border-radius: 8px; text-align: center;">
-            <h2>Ready to Optimize Your Supply Chain?</h2>
-            <p>Whether you are developing a new product or looking to reduce costs on existing imports, I provide the local expertise you need.</p>
-            <p><strong>Location:</strong> Canada (EST/PST Accessible) | <strong>Languages:</strong> English & Mandarin</p>
-            <a href="mailto:nelson0624@yahoo.com" class="btn" style="background: #e67e22;">Contact Me Today</a>
+        <div class="divider"></div>
+
+        <span class="mono" style="color:var(--accent); display: block; margin-bottom: 2rem;">[ INTERVENTION_MODELS ]</span>
+        <section class="services-grid">
+            <div class="service-card">
+                <span class="mono service-id">01_FIT_DIAGNOSTIC</span>
+                <h3>Fit & Return Diagnostic Sprint</h3>
+                <p>2–3 Weeks. Identify repeated fit issues hidden across different product names. Distinguish execution problems from selection problems.</p>
+                <a href="mailto:your@email.com" class="btn">[ REQUEST_SCOPE ]</a>
+            </div>
+            <div class="service-card">
+                <span class="mono service-id">02_REALITY_CHECK</span>
+                <h3>Agent Reality Check</h3>
+                <p>1–2 Weeks. Evaluate where the agent genuinely adds value vs. where information gets filtered. Restore visibility to your system.</p>
+                <a href="mailto:your@email.com" class="btn">[ COMMENCE_CHECK ]</a>
+            </div>
+            <div class="service-card">
+                <span class="mono service-id">03_FACTORY_VETTING</span>
+                <h3>Factory Vetting Pack</h3>
+                <p>Project-based. Evaluate factories against actual product risks. I help you decide which factories should matter, not just the "best" list.</p>
+                <a href="mailto:nelson0624@yahoo.com" class="btn">[ START_VETTING ]</a>
+            </div>
         </section>
+
+        <section class="contact-section">
+            <span class="mono" style="color:var(--accent)">// SYSTEM STATUS: READY</span>
+            <h2>Structural issues require <br>structural decisions.</h2>
+            <p style="color: var(--text-dim); margin-bottom: 2rem;">If your product issues feel structural — not accidental — we should talk.</p>
+            <a href="mailto:your@email.com" class="btn" style="padding: 1.5rem 3rem; font-size: 1rem;">[ SCHEDULE_INITIAL_BRIEFING ]</a>
+        </section>
+
+        <footer>
+            <div class="mono" style="text-align: center;">
+                LATITUDE: 43.6532° N, LONGITUDE: 79.3832° W // TORONTO_OFFICE
+            </div>
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Supply Chain Professional | All Rights Reserved.</p>
-    </footer>
-
 </body>
-
 </html>
-
